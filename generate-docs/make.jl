@@ -11,7 +11,7 @@ __version__ = "0.1"
 # https://juliadocs.github.io/Documenter.jl/latest/
 using Documenter
 
-include("../julia-src/KullbackLeibler.jl")
+include("../src/KullbackLeibler.jl")
 # include("KullbackLeibler.jl")
 using KullbackLeibler
 

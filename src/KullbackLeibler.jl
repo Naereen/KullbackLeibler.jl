@@ -17,7 +17,7 @@
     4.503217...
 ```
 
-- Note: there is also a Python version, if you need.
+- Note: there is also a Python version, if you need. (Cf. https://github.com/Naereen/Kullback-Leibler-divergences-and-kl-UCB-indexes/)
 
 - MIT Licensed, (C) 2018 Lilian Besson (Naereen)
   https://GitHub.com/Naereen/KullbackLeibler.jl
@@ -156,12 +156,10 @@ doc"""
 
 Kullback-Leibler divergence for exponential distributions. https://en.wikipedia.org/wiki/Exponential_distribution#Kullback.E2.80.93Leibler_divergence
 
-.. math::
-
-    \mathrm{KL}(\mathrm{Exp}(x), \mathrm{Exp}(y)) = \begin{cases}
-    \frac{x}{y} - 1 - \log(\frac{x}{y}) & \text{if} x > 0, y > 0\\
-    +\infty & \text{otherwise}
-    \end{cases}
+$$\mathrm{KL}(\mathrm{Exp}(x), \mathrm{Exp}(y)) = \begin{cases}
+\frac{x}{y} - 1 - \log(\frac{x}{y}) & \text{if} x > 0, y > 0\\
++\infty & \text{otherwise}
+\end{cases}$$
 
 ```julia
     julia> klExp(3, 3)

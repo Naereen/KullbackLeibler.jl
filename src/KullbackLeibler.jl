@@ -33,11 +33,10 @@ julia> klBern(0.33, 0.42)  # same!
 
 - Note: there is also a Python version, if you need. (Cf. https://github.com/Naereen/Kullback-Leibler-divergences-and-kl-UCB-indexes/)
 
-- MIT Licensed, (C) 2018 Lilian Besson (Naereen)
-  https://GitHub.com/Naereen/KullbackLeibler.jl
+- MIT Licensed, (C) 2018 Lilian Besson (Naereen), https://GitHub.com/Naereen/KullbackLeibler.jl
 
 - Cf. https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence
-- Reference: [Filippi, Cappé & Garivier - Allerton, 2011](https://arxiv.org/pdf/1004.5229.pdf) and [Garivier & Cappé, 2011](https://arxiv.org/pdf/1102.2490.pdf)
+- Reference: [Filippi, Cappé & Garivier - Allerton, 2011](https://arxiv.org/pdf/1004.5229.pdf), [Garivier & Cappé, 2011](https://arxiv.org/pdf/1102.2490.pdf), and [Kullback & Leibler, 1951](http://www.jstor.org/stable/2236703).
 """
 
 __author__ = "Lilian Besson"
@@ -399,7 +398,7 @@ julia> klGauss(1, 0, sig2x=0.5, sig2y=0.25)  # not symmetric here!
 3.1534...
 ```
 
-- **Warning:** Using :class:`Policies.klUCB` (and variants) with `klGauss` is equivalent to use :class:`Policies.UCB`, so prefer the simpler version.
+- **Warning:** Using [`Policies.klUCB`](https://smpybandits.github.io/docs/Policies.klUCB.html) (and variants) with `klGauss` is equivalent to use [`Policies.UCB`](https://smpybandits.github.io/docs/Policies.UCB.html), so prefer the simpler version. (**this is only for the Python version**)
 """
 function klGauss(x, y, sig2x=0.25, sig2y=0.25)
     if - eps < (sig2y - sig2x) < eps
@@ -663,7 +662,7 @@ julia> klucbGauss(0.9, 0.9)
 1.570820...
 ```
 
-- **Warning**: Using :class:`Policies.klUCB` (and variants) with `klucbGauss` is equivalent to use :class:`Policies.UCB`, so prefer the simpler version.
+- **Warning**: Using [`Policies.klUCB`](https://smpybandits.github.io/docs/Policies.klUCB.html) (and variants) with `klucbGauss` is equivalent to use [`Policies.UCB`](https://smpybandits.github.io/docs/Policies.UCB.html), so prefer the simpler version (**this is only for the Python version**).
 """
 function klucbGauss(x, d, sig2x=0.25, precision=0.0)
     return x + sqrt(2 * sig2x * d)
